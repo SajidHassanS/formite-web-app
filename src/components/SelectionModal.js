@@ -98,7 +98,18 @@ export default function SelectionModal() {
   </div>
   {/* Line between Step 1 and 2 */}
   {step >= 2 && (
-    <div style={{ width: '16%', height: '2px', backgroundColor: step === 2 ? 'blue' : 'gray', position: 'absolute', top: '40%', left: '25%', transform: 'translate(-50%, -50%)'}}></div>
+    <div
+      style={{
+        width: "19%",
+        height: "2px",
+        border: "2px dotted",
+        borderColor: step >= 2 ? "green" : "gray",
+        position: "absolute",
+        top: "40%",
+        left: "25%",
+        transform: "translate(-45%, -50%)",
+      }}
+    ></div>
   )}
   {/* Step 2 */}
   <div
@@ -115,7 +126,18 @@ export default function SelectionModal() {
   </div>
   {/* Line between Step 2 and 3 */}
   {step >= 3 && (
-    <div style={{ width: '16%', height: '2px', backgroundColor: step === 3 ? 'blue' : 'gray', position: 'absolute', top: '40%', left: '50%', transform: 'translate(-50%, -50%)'}}></div>
+    <div
+      style={{
+        width: "19%",
+        height: "2px",
+        border: "2px dotted",
+        borderColor: step >= 3 ? "green" : "gray",
+        position: "absolute",
+        top: "40%",
+        left: "48%",
+        transform: "translate(-45%, -50%)",
+      }}
+    ></div>
   )}
   {/* Step 3 */}
   <div
@@ -132,7 +154,18 @@ export default function SelectionModal() {
   </div>
   {/* Line between Step 3 and 4 */}
   {step >= 4 && (
-    <div style={{ width: '16%', height: '2px', backgroundColor: step === 4 ? 'blue' : 'gray', position: 'absolute', top: '40%', left: '75%', transform: 'translate(-50%, -50%)'}}></div>
+    <div
+      style={{
+        width: "20%",
+        height: "2px",
+        border: "2px dotted",
+        borderColor: step >= 4 ? "green" : "gray",
+        position: "absolute",
+        top: "40%",
+        left: "71%",
+        transform: "translate(-45%, -50%)",
+      }}
+    ></div>
   )}
   {/* Step 4 */}
   <div
@@ -148,8 +181,6 @@ export default function SelectionModal() {
     <h4 className="text-xl font-bold text-white">Final Submission</h4>
   </div>
 </section>
-
-
 
 
                   {step === 1 && (
