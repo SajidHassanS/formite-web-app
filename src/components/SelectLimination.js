@@ -16,36 +16,47 @@ const SelectLimination = ({
   const texture = [
     {
       image: "/images/texture1.png",
-      title: "Elegant Series"
+      title: "Elegant Series",
     },
     {
       image: "/images/texture2.png",
-      title: "3D Patterns"
-    }, {
+      title: "3D Patterns",
+    },
+    {
       image: "/images/texture1.png",
-      title: "Marble"
-    }
-    , {
+      title: "Marble",
+    },
+    {
       image: "/images/texture2.png",
-      title: "Fabric"
-    }
-    , {
+      title: "Fabric",
+    },
+    {
       image: "/images/texture1.png",
-      title: "Pattern"
-    }, {
+      title: "Pattern",
+    },
+    {
       image: "/images/texture2.png",
-      title: "Solid glitters"
-    }, {
+      title: "Solid glitters",
+    },
+    {
       image: "/images/texture1.png",
-      title: "Wood Grains"
-    }];
+      title: "Wood Grains",
+    },
+  ];
 
   return (
-    <div style={{ overflowY: 'auto' }}> {/* Added overflowY: 'auto' here */}
+    <div style={{ overflowY: "auto" }}>
+      {" "}
+      {/* Added overflowY: 'auto' here */}
       <div className="flex justify-center flex-col md:flex-row gap-5 items-center flex-wrap pb-16 pt-3">
         <div className="h-[46rem] w-[70%] relative pb-16">
-          <section className="px-12  pb-4 flex justify-start flex-col gap-3 ">
-            <h3 className="text-2xl font-bold text-white">{selectedRoom}</h3>
+          <section className="px-6  pb-4 flex justify-start flex-col gap-3 ">
+            <h3
+              className="text-2xl font-bold text-white "
+              style={{ textTransform: "capitalize" }}
+            >
+              {selectedRoom}
+            </h3>
           </section>
           {selectedTexture ? (
             <img
@@ -62,24 +73,28 @@ const SelectLimination = ({
             />
           )}
         </div>
-        <section className="flex w-[25%] flex-col justify-center items-center pb-16">
-          <section className="px-12 pt-4 pb-4 flex justify-start flex-col gap-3 ">
-            <h3 className="text-2xl font-bold text-white">{selectedColor}</h3>
+        <section className="flex w-[25%] flex-col justify-start pb-16">
+          <section className="px-6 pt-4 pb-4  flex justify-start ">
+            <h3
+              className="text-2xl font-bold text-white "
+              style={{ textTransform: "capitalize" }}
+            >
+              {selectedColor}
+            </h3>
           </section>
-          <div className="p-2" style={{ overflowY: 'auto', maxHeight: '40rem' }}>
-            <div className="grid grid-cols-2 gap-5 ">
+          <div
+            className="p-2"
+            style={{ overflowY: "auto", maxHeight: "40rem" }}
+          >
+            <div className="grid grid-cols-2  gap-y-10">
               {texture.map((item, idx) => (
-                <div
+                <img
                   key={idx}
-                  className="flex-shrink-0"
                   onClick={() => handleImageClick(item)}
-                >
-                  <img
-                    src={item.image}
-                    alt={item.title}
-                    className="rounded-xl h-44 w-44 object-cover"
-                  />
-                </div>
+                  src={item.image}
+                  alt={item.title}
+                  className="rounded-xl h-44 w-44 object-cover"
+                />
               ))}
             </div>
           </div>
@@ -101,7 +116,6 @@ const SelectLimination = ({
 
 export default SelectLimination;
 
-
 function NewSlider1() {
   const data = [
     {
@@ -118,7 +132,6 @@ function NewSlider1() {
     },
   ];
 
-  
   const [index, setIndex] = useState(0);
   return (
     <>

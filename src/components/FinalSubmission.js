@@ -19,7 +19,10 @@ const FinalSubmission = () => {
     return (
         <>
             <section className="px-12 py-16 flex justify-center items-center flex-col gap-8">
-                <img src="/images/demolimination.jpg" className="w-3/4 h-1/2 rounded-xl" />
+                <div className="h-[40rem] w-[70%]">
+                <img src="/images/demolimination.jpg" className="w-full h-full rounded-xl" />
+
+                </div>
                 <div className="flex justify-center items-center gap-8">
                     <h3 className="text-white text-2xl">Download and Share</h3>
                     <div className="flex justify-center items-center gap-5">

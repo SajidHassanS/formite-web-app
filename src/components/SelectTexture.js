@@ -68,26 +68,29 @@ const SelectTexture = ({
             Select The Lamination
           </h3>
           <div className="justify-center items-start py-5 grid gap-3 grid-cols-3 flex-wrap w-full">
-            {textures.map((item, index) => (
-              <div
-                key={index}
-                onClick={() => handleTextureSelection(item.title)}
-                className={`w-full rounded-xl ${selectedColor === item.title ? "bg-black/10" : null
-                  } hover:bg-black/10 relative flex flex-col col-span-1 gap-3 justify-center items-center px-3 py-2`}
-              >
-                <img
-                  src={item.image}
-                  alt="log"
-                  className={"h-36  w-full rounded-md"}
-                />
-                <h5 className="text-xl font-medium text-white capitalize">
-                  {item.title}
-                </h5>
-                {selectedColor === item.title && <div className="absolute top-0 left-0 inset-0 w-full h-full bg-black opacity-50 "></div>}
+  {textures.map((item, index) => (
+    <div
+      key={index}
+      onClick={() => handleTextureSelection(item.title)}
+      className={`w-full rounded-xl ${selectedColor === item.title ? "bg-black/10" : null
+        } relative flex flex-col col-span-1 gap-3 justify-center items-center px-3 py-2 overflow-hidden`}
+      style={{ transition: "transform 0.3s" }}
+    >
+      <img
+        src={item.image}
+        alt="log"
+        className="h-36 w-full rounded-md transform scale-100 hover:scale-110 transition duration-300"
+      />
+      <h5 className="text-xl font-medium text-white capitalize">
+        {item.title}
+      </h5>
+      {selectedColor === item.title && (
+        <div className="absolute top-0 left-0 inset-0 w-full h-full  opacity-50"></div>
+      )}
+    </div>
+  ))}
+</div>
 
-              </div>
-            ))}
-          </div>
         </section>
       </section>
     </>
