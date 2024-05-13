@@ -81,7 +81,7 @@ export default function SelectionModal() {
                 leaveFrom="opacity-100 scale-100"
                 leaveTo="opacity-0 scale-95"
               >
-                <Dialog.Panel className=" min-h-[90vh] w-full bg-no-repeat bg-cover  transform overflow-hidden  bg-[url('/images/modalbg.png')] text-left align-middle shadow-xl transition-all">
+                <Dialog.Panel className=" min-h-[90vh] w-full bg-no-repeat bg-cover  transform overflow-hidden  bg-[url('/images/modalbg.png')] z-10 text-left align-middle shadow-xl transition-all">
              
              
              

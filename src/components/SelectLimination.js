@@ -14,21 +14,34 @@ const SelectLimination = ({
   };
 
   const texture = [
+    // {
+    //   image: "/images/3050.jpg",
+    //   title: "Elegant Series",
+    // },
+    // {
+    //   image: "/images/3051.jpg",
+    //   title: "3D Patterns",
+    // },
+    // {
+    //   image: "/images/3052.jpg",
+    //   title: "Marble",
+    // },
+    // {
+    //   image: "/images/3053.jpg",
+    //   title: "Fabric",
+    // },
+
     {
-      image: "/images/texture1.png",
+      image: "/images/colors/7010.jpg",
       title: "Elegant Series",
     },
     {
-      image: "/images/texture2.png",
+      image: "/images/colors/7014.jpg",
       title: "3D Patterns",
     },
     {
-      image: "/images/texture1.png",
+      image: "/images/colors/7015.jpg",
       title: "Marble",
-    },
-    {
-      image: "/images/texture2.png",
-      title: "Fabric",
     },
     {
       image: "/images/texture1.png",
@@ -46,54 +59,48 @@ const SelectLimination = ({
 
   return (
     <div style={{ overflowY: "auto" }}>
-      {" "}
-      {/* Added overflowY: 'auto' here */}
       <div className="flex justify-center flex-col md:flex-row gap-5 items-center flex-wrap pb-16 pt-3">
         <div className="h-[46rem] w-[70%] relative pb-16">
-          <section className="px-6  pb-4 flex justify-start flex-col gap-3 ">
-            <h3
-              className="text-2xl font-bold text-white "
-              style={{ textTransform: "capitalize" }}
-            >
+          <section className="px-6 pb-4 flex justify-start flex-col gap-3">
+            <h3 className="text-2xl font-bold text-white" style={{ textTransform: "capitalize" }}>
               {selectedRoom}
             </h3>
           </section>
-          {selectedTexture ? (
+          <div
+            className="image-container"
+            style={{
+              position: "relative",
+              width: "100%",
+              height: "100%",
+              backgroundImage: selectedTexture ? `url(${selectedTexture.image})` : "none",
+         
+              backgroundRepeat:"repeat",
+          
+            }}
+          >
             <img
-              src={selectedTexture.image}
-              alt={selectedTexture.title}
-              className="h-full w-full rounded-xl object-cover"
-              onClick={() => setSelectedTexture(null)}
-            />
-          ) : (
-            <img
-              src={"/images/mainbg.jpg"} // Placeholder image
+              src={"/images/new2.png"}
               alt="Room"
               className="h-full w-full rounded-xl object-cover"
+              style={{ position: "absolute", zIndex: 1 }}
             />
-          )}
+          </div>
         </div>
         <section className="flex w-[25%] flex-col justify-start pb-16">
-          <section className="px-6 pt-4 pb-4  flex justify-start ">
-            <h3
-              className="text-2xl font-bold text-white "
-              style={{ textTransform: "capitalize" }}
-            >
+          <section className="px-6 pt-4 pb-4 flex justify-start">
+            <h3 className="text-2xl font-bold text-white" style={{ textTransform: "capitalize" }}>
               {selectedColor}
             </h3>
           </section>
-          <div
-            className="p-2"
-            style={{ overflowY: "auto", maxHeight: "40rem" }}
-          >
-            <div className="grid grid-cols-2  gap-y-10">
+          <div className="p-2" style={{ overflowY: "auto", maxHeight: "40rem" }}>
+            <div className="grid grid-cols-2 gap-y-10">
               {texture.map((item, idx) => (
                 <img
                   key={idx}
                   onClick={() => handleImageClick(item)}
                   src={item.image}
                   alt={item.title}
-                  className="rounded-xl h-44 w-44 object-cover"
+                  className="rounded-xl h-44 w-44 object-cover cursor-pointer"
                 />
               ))}
             </div>
@@ -104,7 +111,7 @@ const SelectLimination = ({
         <section className="px-12 flex justify-end items-center pb-6">
           <button
             onClick={() => setStep(step + 1)}
-            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+            className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded cursor-pointer"
           >
             Continue
           </button>
@@ -115,6 +122,7 @@ const SelectLimination = ({
 };
 
 export default SelectLimination;
+
 
 function NewSlider1() {
   const data = [
